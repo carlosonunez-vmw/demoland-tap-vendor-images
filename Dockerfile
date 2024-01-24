@@ -4,4 +4,5 @@ FROM carlosonunez/bmc-remedy:latest
 # RUN apt -y install ca-certificates
 # COPY ./certificates/my-companys-cert-chain.pem /etc/ssl/certificates
 # RUN update-ca-certificates
-
+ENTRYPOINT [ "sh" ]
+CMD [ "-c", "remedy --version; remedy $@" ]
